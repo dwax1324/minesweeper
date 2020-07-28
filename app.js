@@ -9,8 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         document.querySelector('.colorChange').style.background= newColor
         }, 100);
-
     
+    
+
+
     
 
 
@@ -102,9 +104,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // click on square actions
 
     function click(square) {
-        firstClick = true
         let currentId = square.id
         if (isGameOver) return
+        firstClick = true
         if( square.classList.contains('checked') || square.classList.contains('flag')) return
         if (square.classList.contains('bomb')) {
             gameOver(square)
@@ -113,9 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (total != 0) {
                 square.classList.add('checked')
                 square.innerHTML = total
-                if (total == 1) {
-                    total.style.color='blue'
-                }
                 return
             }
 
@@ -230,12 +229,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         isGameOver = false;
         firstClick = false;
+        flags = 0
+        document.querySelector('.time').innerText = `00:00`
+        document.querySelector(".flagLeft").innerHTML = bombAmount - flags
         console.log('clicked')
         deleteClasses()
         createBoard()
     })
     
-
+    //color
     document.querySelector('.colorChange').addEventListener('click', () => {
         
 
@@ -245,6 +247,8 @@ document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('.checked')[i].style.background = newColor
         }
         document.querySelector('.colorChange').style.background= newColor
+
+
 
     })
 
@@ -270,8 +274,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
             time++
     }
-        console.log(firstClick)
     }, 1000);
+
+    document.querySelector('.box').addEventListener('contextmenu', (e) => {
+        e.preventDefault()
+    })
 
     
 })
+

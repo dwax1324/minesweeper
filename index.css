@@ -1,7 +1,8 @@
 body{
     margin:0;
     padding:0;
-
+    user-select: none;
+    overflow: hidden;
 }
 
 .box{
@@ -12,7 +13,6 @@ body{
     align-items: center;
     width: 100vw;
     height: 100vh;
-    border: 1px solid black;
 
 }
 
@@ -67,13 +67,20 @@ column-gap: 0;
     text-align:center;
         background-color: #6d4c41;
         padding:5px;
+    cursor: pointer;
 }
+
+.grid div:hover{
+    background-color: #3e2723;
+    transition: 0.3s;
+}
+
 .time{
     color:red;
     font-size: 28px;
     margin-bottom: 20px;
     user-select: none;
-    border:1px solid black;
+    border:2px dotted black;
     padding: 2px 10px 2px 10px;
     margin-top: 10px;
 }
@@ -83,15 +90,21 @@ transition: 0.3s;
 }
 
 .colorChange{
-    width:40px;
-    height:30px;
-    border:1px solid white;
+    width:60px;
+    height:40px;
+    border:1px dotted balck;
     background-color: #388e3c;
     margin-top:30px;
+    border-radius: 20px;
+}
+
+.colorChange:hover{
+    opacity: 0.7;
 }
 
 .checked{
     transition: 0.3s;
     background-color: #388e3c;
     color:white;
+    text-shadow: black 1.5px 1.5px;
 }
