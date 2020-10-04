@@ -1,4 +1,4 @@
 # minesweeper
 
 
-wjsweeper.netlify.com
+https://wjsweeper.netlify.com
